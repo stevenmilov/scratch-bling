@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Your profile</title>
+	</head>
+	<body>
+		<!-- Latest compiled and minified CSS -->
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<div class="jumbotron text-center" style="margin-bottom:1">
+			<h1>Scratch Bling</h1>
+		</div>
+		<div class="container">
+			<h3>Back Scratchers</h3>
+			<table class="table table-striped" style="width:100%" border="1">
+				<th>Name</th>
+				<th>Description</th>
+				<th>Size</th>
+				<th>Price</th>
+				<th> </th>
+				{% for i in items %}
+					<tr>
+						<td>{{i.name}}</td>
+						<td>{{i.description}}</td>
+						<td>{{i.size}}</td>
+						<td>{{i.price}}</td>
+						<td>
+							<a href={{ '/deleteItem/%s' %i.id }}>Delete</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+			<div class= "row">
+				<div class="col-sm-4"><a href='{{ url_for("unlogger") }}'>click here to logout</a></div>
+				<div class="col-sm-4"><a href='{{ url_for("addItem") }}'>Add Item</a></div>
+			</div>
+		</div>
+		
+
+		
+		
+		
+	</body>
+</html>

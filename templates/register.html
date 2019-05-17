@@ -1,0 +1,27 @@
+<!-- Latest compiled and minified CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="jumbotron text-center" style="margin-bottom:1">
+  <h1>Scratch Bling</h1>
+</div>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+      <h3>Sign Up</h3>
+    </div>
+    <div class="row justify-content-center align-items-center">
+    {% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <form action="" method="post">
+        <dl>
+          <dt>Username:
+          <dd><input type="text" name="username" size="30" value="{{ request.form.username }}">
+          <dt>Full Name:
+          <dd><input type="text" name="name" size="30" value="{{ request.form.name }}">
+          <dt>Password:
+          <dd><input type="password" name="password" size="30" value="{{ request.form.password }}">
+        </dl>
+        <div class="actions"><input type="submit" value="Sign Up"></div>
+      </form>
+    </div>
+</div>
+
